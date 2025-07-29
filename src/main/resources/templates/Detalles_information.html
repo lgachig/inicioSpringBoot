@@ -5,11 +5,26 @@
     <title>Informacion</title>
 </head>
 <body>
-    <p> Informacion </p>
-    <strong>Nombre: </strong> <span th:text="${Gerencia.nombre}"></span>
-    <strong>Apellido: </strong> <span th:text="${Gerencia.apellido}"></span>
-    <strong>Email: </strong> <span th:text="${Gerencia.email}"></span>
-    <strong>Telefono: </strong> <span th:text="${Gerencia.telefono}"></span>
-    <strong>Edad: </strong> <span th:text="${Gerencia.edad}"></span>
+    <p> Informacion Empleados</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Email</th>
+                <th>Telefono</th>
+                <th>Edad</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="empleado : ${Empleados}">
+                <td th:text="${empleado.nombre}"></td>
+                <td th:text="${empleado.apellido}"></td>
+                <td th:text="${empleado.email}"></td>
+                <td th:text="${empleado.telefono}"></td>
+                <td th:text="${empleado.edad}"></td>
+            </tr>
+        </tbody>
+    </table>
 </body>
 </html>
