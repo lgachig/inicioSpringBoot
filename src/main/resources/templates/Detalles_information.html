@@ -5,7 +5,11 @@
     <title>Informacion</title>
 </head>
 <body>
-    <h1 th:text="${title}"></h1>
-    <p th:text="${message}"></p>
+    <p> Informacion </p>
+    <strong>Nombre: </strong> <span th:text="${Gerencia.nombre}"></span>
+    <strong>Apellido: </strong> <span th:text="${Gerencia.apellido}"></span>
+    <strong>Email: </strong> <span th:text="${Gerencia.email}"></span>
+    <strong>Telefono: </strong> <span th:text="${Gerencia.telefono}"></span>
+    <strong>Edad: </strong> <span th:text="${Gerencia.edad}"></span>
 </body>
 </html>
