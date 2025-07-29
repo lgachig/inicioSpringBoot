@@ -3,6 +3,7 @@ package uce.edu.ec.iniciospringboot.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import uce.edu.ec.iniciospringboot.Models.DTO.ClaseDTO;
 import uce.edu.ec.iniciospringboot.Models.Empleados;
 
 import java.util.HashMap;
@@ -14,7 +15,6 @@ import java.util.Map;
 public class EjemploRestController {
 
     @GetMapping("/Informacion")
-    // getEmpleados() devuelve un mapa con la informacion de los empleados
     public Map<String, Object> getEmpleados(){
         Empleados empleado = new Empleados("Juan", "Perez", "Elluis@uce.edu.ec", "999999999", 25);
         Empleados empleado1 = new Empleados("Juan", "Perez", "Elluis@uce.edu.ec", "999999999", 25);
@@ -25,5 +25,15 @@ public class EjemploRestController {
         map.put("Descripcion", "lista de empleados");
         map.put("Data", Gerencia);
         return map;
+    }
+
+    // getClaseDTO devuelve un objeto de tipo ClaseDTO
+
+    @GetMapping("/DTOInformacion")
+    public ClaseDTO getClaseDTO(){
+        ClaseDTO claseDTO = new ClaseDTO();
+        claseDTO.setTitulo("Clase DTO");
+        claseDTO.setUsuario("Juan");
+        return claseDTO;
     }
 }
