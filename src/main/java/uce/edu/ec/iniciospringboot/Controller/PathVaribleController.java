@@ -1,10 +1,8 @@
 package uce.edu.ec.iniciospringboot.Controller;
 
 import com.fasterxml.jackson.databind.ser.std.StdKeySerializers;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import uce.edu.ec.iniciospringboot.Models.Empleados;
 
 @RestController
 @RequestMapping("api/pathvar")
@@ -18,6 +16,14 @@ public class PathVaribleController {
         ParamDTO paramDTO = new ParamDTO();
         paramDTO.setDetalle(id);
         return paramDTO;
+    }
+
+    // @RequestBody surve para indicar que el parametro es un objeto de tipo Empleados
+    // retorna un objeto de tipo Empleados
+    // sirve para enviar datos entre el cliente y el servidor mediante un objeto jSon
+    @PostMapping("/solicitud")
+    public Empleados solicitud(@RequestBody Empleados empleado){
+        return empleado;
     }
 
 }
